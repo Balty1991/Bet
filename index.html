@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bet Analyst</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">GitHub Pages App</p>
+          <h1>Bet Analyst</h1>
+          <p class="subtitle">
+            Analiză sportivă în browser pentru exporturi JSON. Încarci fișierul, filtrezi piețele și vezi probabilități implicite,
+            consensul cotelor și scorul de confidence.
+          </p>
+        </div>
+        <div class="hero-badge">Static • Fără backend</div>
+      </header>
+
+      <main class="layout">
+        <section class="panel controls-panel">
+          <div class="panel-head">
+            <h2>Control</h2>
+            <span id="statusBadge" class="status neutral">Gata de lucru</span>
+          </div>
+
+          <div class="control-group">
+            <label for="fileInput">Încarcă JSON</label>
+            <input id="fileInput" type="file" accept=".json,application/json" />
+          </div>
+
+          <div class="actions-row">
+            <button id="loadSampleBtn" class="btn primary">Încarcă exemplul</button>
+            <button id="analyzeBtn" class="btn">Analizează</button>
+          </div>
+
+          <div class="control-group">
+            <label for="marketSelect">Piețe</label>
+            <div id="marketSelect" class="market-grid"></div>
+          </div>
+
+          <div class="control-group">
+            <div class="label-row">
+              <label for="confidenceRange">Confidence minim</label>
+              <strong id="confidenceValue">55</strong>
+            </div>
+            <input id="confidenceRange" type="range" min="1" max="99" value="55" />
+          </div>
+
+          <div class="control-group compact">
+            <label for="topSelect">Rezultate maxime</label>
+            <select id="topSelect">
+              <option value="10">10</option>
+              <option value="25" selected>25</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+            </select>
+          </div>
+
+          <div class="control-group compact">
+            <label for="searchInput">Caută meci</label>
+            <input id="searchInput" type="text" placeholder="ex: Arsenal" />
+          </div>
+        </section>
+
+        <section class="content-column">
+          <section class="summary-grid" id="summaryGrid">
+            <article class="panel metric-card">
+              <span>Evenimente</span>
+              <strong id="eventsCount">0</strong>
+            </article>
+            <article class="panel metric-card">
+              <span>Rânduri analizate</span>
+              <strong id="insightsCount">0</strong>
+            </article>
+            <article class="panel metric-card">
+              <span>Confidence mediu</span>
+              <strong id="avgConfidence">0</strong>
+            </article>
+            <article class="panel metric-card">
+              <span>Piață top</span>
+              <strong id="topMarket">-</strong>
+            </article>
+          </section>
+
+          <section class="panel table-panel">
+            <div class="panel-head">
+              <h2>Rezultate</h2>
+              <button id="downloadBtn" class="btn subtle">Export JSON</button>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Meci</th>
+                    <th>Piață</th>
+                    <th>Selecție</th>
+                    <th>Prob.</th>
+                    <th>Conf.</th>
+                    <th>Cotă consens</th>
+                    <th>Date</th>
+                    <th>Rezumat</th>
+                  </tr>
+                </thead>
+                <tbody id="resultsBody">
+                  <tr>
+                    <td colspan="8" class="empty-state">Încarcă un fișier JSON sau apasă pe exemplu.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
