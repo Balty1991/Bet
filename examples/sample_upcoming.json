@@ -1,0 +1,31 @@
+[
+  {
+    "event_id": "1001",
+    "home_team": "Arsenal",
+    "away_team": "Chelsea",
+    "league": "Premier League",
+    "sport": "football",
+    "commence_time": "2026-04-10T19:00:00Z",
+    "markets": {
+      "1x2": {"home": 1.95, "draw": 3.55, "away": 4.10},
+      "double_chance": {"1X": 1.24, "X2": 1.95, "12": 1.31},
+      "btts": {"yes": 1.78, "no": 2.02},
+      "over_2_5": {"over": 1.72, "under": 2.10},
+      "under_3_5": {"under": 1.38, "over": 2.95}
+    }
+  },
+  {
+    "event_id": "1002",
+    "home_team": "Inter",
+    "away_team": "Torino",
+    "league": "Serie A",
+    "sport": "football",
+    "commence_time": "2026-04-11T16:00:00Z",
+    "markets": {
+      "1x2": {"home": 1.48, "draw": 4.15, "away": 7.20},
+      "double_chance": {"1X": 1.08, "X2": 2.70, "12": 1.21},
+      "btts": {"yes": 2.12, "no": 1.67},
+      "over_2_5": {"over": 1.88, "under": 1.94}
+    }
+  }
+]
